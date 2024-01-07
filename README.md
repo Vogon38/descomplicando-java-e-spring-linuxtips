@@ -7,21 +7,6 @@ Abrangendo desde os conceitos fundamentais do Java até tópicos avançados rela
 
 O curso completo está disponível no [site oficial da LinuxTips](https://www.linuxtips.io/course/java-e-spring). Certifique-se de se inscrever para obter acesso ao conteúdo.
 
-## Estrutura do Repositório
-
-O material do curso está organizado em pastas, cada uma representando uma aula específica.
-
-### Aula 0: Descomplicando Java e Spring
-
-- Termos e Condições de uso
-- História do Java e Mercado de trabalho
-- O que é Java?
-- O que é Spring?
-- Mercado de trabalho
-- Próximos passos nas aulas subsequentes
-
-(As demais aulas seguem uma estrutura semelhante, cobrindo diversos tópicos do Java e Spring.)
-
 ## Destaques do Conteúdo
 
 - Conceitos básicos do Java: sintaxe e estruturas de controle
