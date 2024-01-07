@@ -1,6 +1,5 @@
 package com.linuxtips.descomplicandojavaespring.day10.map;
 
-import java.util.HashMap;
 import java.util.Hashtable;
 
 public class HashTableCollections {

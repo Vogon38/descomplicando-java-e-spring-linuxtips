@@ -1,4 +1,4 @@
-package com.linuxtips.descomplicandojavaespring.day10.QueueJava;
+package com.linuxtips.descomplicandojavaespring.day10.queueJava;
 
 public class Equipe {
 

@@ -1,4 +1,4 @@
-package com.linuxtips.descomplicandojavaespring.day10.Set;
+package com.linuxtips.descomplicandojavaespring.day10.set;
 
 import java.util.LinkedHashSet;
 

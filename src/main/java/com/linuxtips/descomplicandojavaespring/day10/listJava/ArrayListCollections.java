@@ -1,4 +1,4 @@
-package com.linuxtips.descomplicandojavaespring.day10.ListJava;
+package com.linuxtips.descomplicandojavaespring.day10.listJava;
 
 import java.util.ArrayList;
 

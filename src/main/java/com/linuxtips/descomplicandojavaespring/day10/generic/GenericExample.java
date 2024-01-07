@@ -1,4 +1,4 @@
-package com.linuxtips.descomplicandojavaespring.day10.Generic;
+package com.linuxtips.descomplicandojavaespring.day10.generic;
 
 public class GenericExample<T> {
 
