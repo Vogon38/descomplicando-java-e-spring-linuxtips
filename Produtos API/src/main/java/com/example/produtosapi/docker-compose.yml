@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  localstack:
+    image: localstack/localstack:latest
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - SERVICES=dynamodb
+    ports:
+      - '4566:4566'
+    volumes:
+      - "C:/localstack-data:/localstack-data/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
