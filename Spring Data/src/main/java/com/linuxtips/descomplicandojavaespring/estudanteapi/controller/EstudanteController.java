@@ -3,6 +3,8 @@ package com.linuxtips.descomplicandojavaespring.estudanteapi.controller;
 import com.linuxtips.descomplicandojavaespring.estudanteapi.exception.EstudanteDuplicadoException;
 import com.linuxtips.descomplicandojavaespring.estudanteapi.model.Estudante;
 import com.linuxtips.descomplicandojavaespring.estudanteapi.service.EstudanteService;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +17,21 @@ import java.util.Optional;
 @RequestMapping("/v1")
 public class EstudanteController {
 
+    Counter novosEstudantes;
+    Counter estudanteDesmatriculados;
+
     @Autowired
     private EstudanteService estudanteService;
+
+    public EstudanteController(MeterRegistry registry) {
+        novosEstudantes = Counter.builder("estudantes.novos"). description("Novos estudantes").register(registry);
+        estudanteDesmatriculados = Counter.builder("estudantes.desmatriculados"). description("Estudantes desmatriculados").register(registry);
+    }
 
     @PostMapping("/estudantes")
     @ResponseStatus(HttpStatus.CREATED)
     public Estudante criarEstudante(@RequestBody Estudante estudante) throws EstudanteDuplicadoException {
+        novosEstudantes.increment();
         return estudanteService.criarEstudante(estudante);
     }
 
@@ -45,6 +56,7 @@ public class EstudanteController {
     @DeleteMapping("/estudantes/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Object> excluirEstudantePeloId(@PathVariable(value = "id") Long id){
+        estudanteDesmatriculados.increment();
         return estudanteService.excluirEstudantePeloId(id);
     }
 
